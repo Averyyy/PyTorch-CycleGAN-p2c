@@ -2,7 +2,7 @@
 A personal project repository based on Pytorch-CycleGAN by aitorzip(https://github.com/aitorzip/PyTorch-CycleGAN).
 
 ## Prerequisites
-Code is intended to work with ```Python 3.6.x```, it hasn't been tested with previous versions
+Code is intended to work with ```Python 3.6.x```, it hasn't been tested with previous versions.
 Code is intended to work with ```torch 1.10.x```.
 
 
