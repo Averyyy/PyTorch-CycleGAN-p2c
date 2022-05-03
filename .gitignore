@@ -105,3 +105,10 @@ ENV/
 
 
 # model checkpoints
+output/checkpoints/netD_A_epoch_*.pth
+output/checkpoints/netG_A2B_epoch_*.pth
+output/checkpoints/netG_B2A_epoch_*.pth
+output/checkpoints/netD_B_epoch_*.pth
+output/A/
+output/B/
+output/previous_run/

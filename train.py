@@ -3,6 +3,7 @@
 import argparse
 import itertools
 
+import os
 import torchvision.transforms as transforms
 from torch.utils.data import DataLoader
 from torch.autograd import Variable
@@ -48,10 +49,18 @@ if opt.cuda:
     netD_A.cuda()
     netD_B.cuda()
 
-netG_A2B.apply(weights_init_normal)
-netG_B2A.apply(weights_init_normal)
-netD_A.apply(weights_init_normal)
-netD_B.apply(weights_init_normal)
+if os.path.exists('output/netG_A2B.pth'):
+    netG_A2B.load_state_dict(torch.load('output/netG_A2B.pth'))
+    netG_B2A.load_state_dict(torch.load('output/netG_A2B.pth'))
+    netD_A.load_state_dict(torch.load('output/netD_A.pth'))
+    netD_B.load_state_dict(torch.load('output/netD_B.pth'))
+    print('Loaded models ----------------------------------------------------------------------------------')
+else:
+    netG_A2B.apply(weights_init_normal)
+    netG_B2A.apply(weights_init_normal)
+    netD_A.apply(weights_init_normal)
+    netD_B.apply(weights_init_normal)
+
 
 # Lossess
 criterion_GAN = torch.nn.MSELoss()
@@ -180,7 +189,15 @@ for epoch in range(opt.epoch, opt.n_epochs):
     lr_scheduler_D_A.step()
     lr_scheduler_D_B.step()
 
+    if not os.path.exists('output/checkpoints'):
+        os.makedirs('output/checkpoints')
+
     # Save models checkpoints
+    torch.save(netG_A2B.state_dict(), f'output/checkpoints/netG_A2B_epoch_{epoch}.pth')
+    torch.save(netG_B2A.state_dict(), f'output/checkpoints/netG_B2A_epoch_{epoch}.pth')
+    torch.save(netD_A.state_dict(), f'output/checkpoints/netD_A_epoch_{epoch}.pth')
+    torch.save(netD_B.state_dict(), f'output/checkpoints/netD_B_epoch_{epoch}.pth')
+    # save current checkpoint
     torch.save(netG_A2B.state_dict(), 'output/netG_A2B.pth')
     torch.save(netG_B2A.state_dict(), 'output/netG_B2A.pth')
     torch.save(netD_A.state_dict(), 'output/netD_A.pth')
