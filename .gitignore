@@ -112,3 +112,8 @@ output/checkpoints/netD_B_epoch_*.pth
 output/A/
 output/B/
 output/previous_run/
+
+# slurm output
+slurm.out
+slurm.errs
+
