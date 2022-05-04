@@ -16,7 +16,7 @@ pip3 install visdom
 ### 1. Setup the dataset
 First, you will need to download and setup a dataset. The easiest way is to use one of the already existing datasets on UC Berkeley's repository:
 ```
-python download_dataset <dataset_name>
+./ download_dataset <dataset_name>
 ```
 Valid <dataset_name> are: apple2orange, summer2winter_yosemite, horse2zebra, monet2photo, cezanne2photo, ukiyoe2photo, vangogh2photo, maps, cityscapes, facades, iphone2dslr_flower, ae_photos
 
