@@ -9,5 +9,5 @@
 
 
 cd /scratch/hq443/PyTorch-CycleGAN-p2c
-conda activate torch-env
-python train.py
+conda activate /scratch/hq443/conda_envs/torch-p2c
+python train.py --dataroot datasets/p2c/ --cuda
