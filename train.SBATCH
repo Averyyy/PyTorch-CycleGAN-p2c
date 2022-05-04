@@ -10,8 +10,8 @@
 # SBATCH --output=pca9_gau_rn.out
 # SBATCH --error=pca9_gau_rn.err
 #SBATCH --gres=gpu:2 # How much gpu need, n is the number
-#SBATCH -p gpu
-#SBATCH --constraint=3080Ti
+#SBATCH -p aquila
+#SBATCH --constraint=2080Ti
 
 echo "Your NetID is: $1"
 echo "Your environment is: $2"
