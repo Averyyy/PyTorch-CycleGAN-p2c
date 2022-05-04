@@ -9,5 +9,5 @@
 
 
 cd /scratch/hq443/PyTorch-CycleGAN-p2c
-conda activate torch-
+conda activate torch-env
 python train.py
