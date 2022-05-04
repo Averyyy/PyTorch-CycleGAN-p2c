@@ -1,9 +1,9 @@
 #!/bin/bash
-#SBATCH --job-name=pca9_gau_rn
+#SBATCH --job-name=cyclegan_p2c
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=6
-#SBATCH --mem=44GB
+#SBATCH --mem=12GB
 #SBATCH --time=120:00:00
 #SBATCH --mail-type=END
 #SBATCH --mail-user=hq443@nyu.edu # put your email here if you want emails
