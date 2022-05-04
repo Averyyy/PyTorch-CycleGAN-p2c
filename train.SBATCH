@@ -19,9 +19,9 @@ module load anaconda3
 module load cuda
 
 echo "start training"
-
+conda init bash
 cd /gpfsnyu/scratch/hq443/PyTorch-CycleGAN-p2c
-conda activate torch-wsl
+conda activate /scratch/hq443/conda_envs/torch-p2c
 python train.py --dataroot datasets/p2c/ --cuda
 
 echo "end training"
